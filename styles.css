@@ -33,14 +33,13 @@ section p{
     margin-bottom: 8px
 }
 
-section textarea{
+section input{
     display: inline-block;
     border: none;
     font-size: 16px;
-    max-width: 80vw;
 }
 
-section textarea:focus{
+section input:focus{
     outline: none;
 }
 
@@ -66,11 +65,12 @@ section textarea:focus{
     color: #bababa;
 }
 
-.mainSection textarea{
+.mainSection input{
     text-align: center;
+    width: 100%;
 }
 
-.mainSection article > textarea{
+.mainSection article > input{
     color: #114B5F;
     font-size: 20px;
     font-weight: bold;
@@ -108,7 +108,7 @@ section textarea:focus{
     display: none;
 }
 
-.historySection article > textarea{
+.historySection article > input{
     color: #068D9D;
     font-size: 18px;
     font-weight: bold;

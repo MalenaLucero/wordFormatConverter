@@ -59,7 +59,7 @@ const replaceSpacesWithHyphens = wordToConvert => wordToConvert.replace(/ /g, "-
 const printConvertions = (word, convertions, containerId) =>{
     const mainContainer = document.getElementById(containerId)
     const innerContainer = document.createElement('article')
-    const title = document.createElement('textarea')
+    const title = document.createElement('input')
     selectElementWithOneClick(title, word)
     innerContainer.appendChild(title)
     convertions.forEach((convertion,index)=>{
@@ -67,7 +67,7 @@ const printConvertions = (word, convertions, containerId) =>{
             const convertionContainer = document.createElement('div')
             const type = document.createElement('p')
             type.innerText = convertion.type
-            const convertedWord = document.createElement('textarea')
+            const convertedWord = document.createElement('input')
             selectElementWithOneClick(convertedWord, convertion.convertedWord)
             convertionContainer.appendChild(type)
             convertionContainer.appendChild(convertedWord)
