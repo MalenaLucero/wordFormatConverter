@@ -7,14 +7,14 @@
     <script src="main.js" type="text/javascript"></script>
     <link href="styles.css" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body onload="initializeEventListener()">
     <header>
         <input id="word">
         <button type="button" onclick="convert()">Convert</button>  
     </header>
     <main>
-        <section id="mainContainer"></section>
-        <section id="historyContainer"></section>
+        <section id="mainContainer" class="mainSection"></section>
+        <section id="historyContainer" class="historySection"></section>
     </main>
 </body>
 </html>

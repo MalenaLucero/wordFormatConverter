@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    font-family: Tahoma, sans-serif
+}
+
+/*header*/
+
+header{
+    height: 30vh;
+    text-align: center;
+    background-color: #114B5F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header input{
+    padding: 15px;
+    font-size: 16px;
+}
+
+header button{
+    padding: 15px;
+    font-size: 16px;
+    background-color: #068D9D;
+    border: 1px solid #068D9D;
+    color: white;
+}
+
+/* the two sections */
+
+section p{
+    margin-bottom: 8px
+}
+
+section span{
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* main section */
+
+.mainSection{
+    height: 60vh;
+    text-align: center;
+}
+
+.mainSection article{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainSection h3{
+    color: #114B5F;
+}
+
+.mainSection p{
+    color: #bababa;
+}
+
+/* history section */
+
+.historySection{
+    padding: 50px;
+}
+
+.historySection h2{
+    font-size: 20px;
+    color: #114B5F;
+    margin: 50px 0;
+}
+
+.historySection > div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.historySection article{
+    min-width: 150px;
+    border: 1px solid #068D9D;
+    margin: 0 10px 10px 0;
+    padding: 10px;
+}
+
+.historySection h3{
+    color: #068D9D;
+}
+
+.historySection article p{
+    display: none;
+}
