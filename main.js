@@ -2,6 +2,7 @@ let word
 let convertionInstance = {}
 let currentConvertions = []
 let convertionsHistory = []
+let counter = 0
 
 const initializeEventListener = () =>{
     const input = document.getElementById('word')
@@ -58,23 +59,35 @@ const replaceSpacesWithHyphens = wordToConvert => wordToConvert.replace(/ /g, "-
 const printConvertions = (word, convertions, containerId) =>{
     const mainContainer = document.getElementById(containerId)
     const innerContainer = document.createElement('article')
-    const title = document.createElement('h3')
-    title.innerText = word
+    const title = document.createElement('textarea')
+    selectElementWithOneClick(title, word)
     innerContainer.appendChild(title)
     convertions.forEach((convertion,index)=>{
         if(index !== 0){
             const convertionContainer = document.createElement('div')
             const type = document.createElement('p')
             type.innerText = convertion.type
-            const convertedWord = document.createElement('span')
-            convertedWord.innerText = convertion.convertedWord
-            convertedWord
+            const convertedWord = document.createElement('textarea')
+            selectElementWithOneClick(convertedWord, convertion.convertedWord)
             convertionContainer.appendChild(type)
             convertionContainer.appendChild(convertedWord)
             innerContainer.appendChild(convertionContainer)  
         }
     })
     mainContainer.appendChild(innerContainer)
+}
+
+const selectElementWithOneClick = (element, value) =>{
+    element.value = value
+    element.readOnly = true
+    element.id = counter
+    counter = counter + 1
+    element.onclick = () => selectText(element.id)
+}
+
+const selectText = (id) =>{
+    const input = document.getElementById(id)
+    input.select()
 }
 
 const printHistory = () =>{

@@ -33,9 +33,15 @@ section p{
     margin-bottom: 8px
 }
 
-section span{
+section textarea{
     display: inline-block;
-    margin-bottom: 10px;
+    border: none;
+    font-size: 16px;
+    max-width: 80vw;
+}
+
+section textarea:focus{
+    outline: none;
 }
 
 /* main section */
@@ -58,6 +64,16 @@ section span{
 
 .mainSection p{
     color: #bababa;
+}
+
+.mainSection textarea{
+    text-align: center;
+}
+
+.mainSection article > textarea{
+    color: #114B5F;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* history section */
@@ -90,4 +106,10 @@ section span{
 
 .historySection article p{
     display: none;
+}
+
+.historySection article > textarea{
+    color: #068D9D;
+    font-size: 18px;
+    font-weight: bold;
 }
