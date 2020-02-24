@@ -8,7 +8,7 @@ body{
 header{
     height: 30vh;
     text-align: center;
-    background-color: #114B5F;
+    background-color: #18435A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +38,7 @@ section input{
     border: none;
     font-size: 16px;
     width: 100%;
+    color: #18435A;
 }
 
 section input:focus{
@@ -57,10 +58,6 @@ section input:focus{
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.mainSection h3{
-    color: #114B5F;
 }
 
 .mainSection p{
@@ -86,7 +83,7 @@ section input:focus{
 .historySection h2{
     font-size: 20px;
     margin: 30px 0;
-    color: #114B5F;
+    color: #068D9D;
 }
 
 .historySection article{
@@ -102,7 +99,7 @@ section input:focus{
 
 .historySection input{
     background-color: #EADEDA;
-    color: #114B5F;
+    color: #18435A;
 }
 
 .historySection article > input{
@@ -112,7 +109,7 @@ section input:focus{
 
 footer{
     height: 15vh;
-    background-color: #114B5F;
+    background-color: #18435A;
     color: white;
     display: flex;
     flex-direction: column;

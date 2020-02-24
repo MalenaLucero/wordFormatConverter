@@ -19,9 +19,8 @@ const convert = () =>{
         currentConvertions.push({"originalWord": word})
         allConvertions()
         printConvertions(word, currentConvertions, 'mainContainer')
-        convertionsHistory.push(currentConvertions)
+        convertionsHistory.unshift(currentConvertions)
         printHistory()
-        eachFirstWordCapitalized(word)
     } 
 }
 
@@ -37,7 +36,7 @@ const allConvertions = () =>{
     newConvertion('ALL CAPS:', toAllCaps(word))
     newConvertion('Lower case with hyphens instead of spaces and no special characters:',
                     toLowerCase(replaceSpacesWithHyphens(replaceSpecialCharactersWithSpaces(word))))
-    newConvertion('Each first word capitalized and no special characters:',
+    newConvertion('Each first letter capitalized and no special characters:',
                     eachFirstWordCapitalized(replaceSpecialCharactersWithSpaces(word)))
 }
 
