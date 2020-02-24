@@ -1,4 +1,4 @@
-# wordFormatConverter
+# Word Format Converter
 
 Github Pages link: https://malenalucero.github.io/wordFormatConverter/
 
