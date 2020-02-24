@@ -37,6 +37,7 @@ section input{
     display: inline-block;
     border: none;
     font-size: 16px;
+    width: 100%;
 }
 
 section input:focus{
@@ -46,7 +47,8 @@ section input:focus{
 /* main section */
 
 .mainSection{
-    height: 60vh;
+    margin-top: 30px;
+    min-height: 35vh;
     text-align: center;
 }
 
@@ -67,11 +69,10 @@ section input:focus{
 
 .mainSection input{
     text-align: center;
-    width: 100%;
 }
 
 .mainSection article > input{
-    color: #114B5F;
+    color: #068D9D;
     font-size: 20px;
     font-weight: bold;
 }
@@ -84,32 +85,46 @@ section input:focus{
 
 .historySection h2{
     font-size: 20px;
-    color: #114B5F;
-    margin: 50px 0;
-}
-
-.historySection > div{
-    display: flex;
-    flex-wrap: wrap;
+    margin: 30px 0;
+    color: #068D9D;
 }
 
 .historySection article{
-    min-width: 150px;
-    border: 1px solid #068D9D;
-    margin: 0 10px 10px 0;
+    border: 1px solid #EADEDA;
     padding: 10px;
-}
-
-.historySection h3{
-    color: #068D9D;
+    margin: 10px 0;
+    background-color: #EADEDA;
 }
 
 .historySection article p{
     display: none;
 }
 
+.historySection input{
+    background-color: #EADEDA;
+    color: #114B5F;
+}
+
 .historySection article > input{
-    color: #068D9D;
     font-size: 18px;
+    font-weight: bold;
+}
+
+footer{
+    height: 15vh;
+    background-color: #114B5F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+footer p{
+    margin: 0;
+}
+
+footer a{
+    color: white;
     font-weight: bold;
 }

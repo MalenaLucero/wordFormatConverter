@@ -14,12 +14,14 @@ const initializeEventListener = () =>{
 const convert = () =>{
     word = document.getElementById('word').value
     if(word !== ''){
-        clearOldData() 
+        clearOldData()
+        word = deleteMultipleSpaces(word.trim())
         currentConvertions.push({"originalWord": word})
         allConvertions()
         printConvertions(word, currentConvertions, 'mainContainer')
         convertionsHistory.push(currentConvertions)
         printHistory()
+        eachFirstWordCapitalized(word)
     } 
 }
 
@@ -33,8 +35,10 @@ const clearOldData = () =>{
 //convertion managers
 const allConvertions = () =>{
     newConvertion('ALL CAPS:', toAllCaps(word))
-    newConvertion('lower case:', toLowerCase(word))
-    newConvertion('lower case with hyphens:', toLowerCase(replaceSpacesWithHyphens(word)))
+    newConvertion('Lower case with hyphens instead of spaces and no special characters:',
+                    toLowerCase(replaceSpacesWithHyphens(replaceSpecialCharactersWithSpaces(word))))
+    newConvertion('Each first word capitalized and no special characters:',
+                    eachFirstWordCapitalized(replaceSpecialCharactersWithSpaces(word)))
 }
 
 const newConvertion = (description, convertedWord) =>{
@@ -54,6 +58,26 @@ const toAllCaps = wordToConvert => wordToConvert.toUpperCase()
 const toLowerCase = wordToConvert => wordToConvert.toLowerCase()
 
 const replaceSpacesWithHyphens = wordToConvert => wordToConvert.replace(/ /g, "-")
+
+const deleteMultipleSpaces = wordToConvert => wordToConvert.replace(/ +(?= )/g,'')
+
+const replaceSpecialCharactersWithSpaces = wordToConvert =>{
+    format = /^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
+    for(let c of wordToConvert){
+        if(c.match(format)){
+            if(c === '&'){
+                wordToConvert = wordToConvert.replace(c, 'and')
+            }else{
+                wordToConvert = wordToConvert.replace(c, ' ')
+            }
+        }    
+    }
+    return deleteMultipleSpaces(wordToConvert.trim())
+}
+
+const eachFirstWordCapitalized = wordToConvert => 
+        wordToConvert.split(' ')
+            .map(word=> word[0].toUpperCase() + word.slice(1)).join(' ')
 
 // dynamic HTML generators
 const printConvertions = (word, convertions, containerId) =>{
