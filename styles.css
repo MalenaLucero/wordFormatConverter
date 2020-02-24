@@ -73,7 +73,7 @@ section input:focus{
 
 .mainSection article > input{
     color: #068D9D;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -86,7 +86,7 @@ section input:focus{
 .historySection h2{
     font-size: 20px;
     margin: 30px 0;
-    color: #068D9D;
+    color: #114B5F;
 }
 
 .historySection article{
