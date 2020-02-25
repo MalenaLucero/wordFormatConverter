@@ -75,7 +75,7 @@ const replaceSpecialCharactersWithSpaces = wordToConvert =>{
 }
 
 const eachFirstWordCapitalized = wordToConvert => 
-        wordToConvert.split(' ')
+        wordToConvert.toLowerCase().split(' ')
             .map(word=> word[0].toUpperCase() + word.slice(1)).join(' ')
 
 // dynamic HTML generators
