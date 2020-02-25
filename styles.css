@@ -68,7 +68,7 @@ section input:focus{
     text-align: center;
 }
 
-.mainSection article > input{
+.mainSection article div:nth-child(1) input{
     color: #068D9D;
     font-size: 25px;
     font-weight: bold;
@@ -102,7 +102,7 @@ section input:focus{
     color: #18435A;
 }
 
-.historySection article > input{
+.historySection article div:nth-child(1) input{
     font-size: 18px;
     font-weight: bold;
 }
@@ -124,4 +124,48 @@ footer p{
 footer a{
     color: white;
     font-weight: bold;
+}
+
+/* tooltip */
+
+.tooltip {
+    position: relative;
+    display: block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.historySection .tooltiptext{
+    left: 40px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

@@ -84,7 +84,7 @@ const printConvertions = (word, convertions, containerId) =>{
     const innerContainer = document.createElement('article')
     const title = document.createElement('input')
     selectElementWithOneClick(title, word)
-    innerContainer.appendChild(title)
+    innerContainer.appendChild(createTooltipContainer(title))
     convertions.forEach((convertion,index)=>{
         if(index !== 0){
             const convertionContainer = document.createElement('div')
@@ -93,11 +93,28 @@ const printConvertions = (word, convertions, containerId) =>{
             const convertedWord = document.createElement('input')
             selectElementWithOneClick(convertedWord, convertion.convertedWord)
             convertionContainer.appendChild(type)
-            convertionContainer.appendChild(convertedWord)
+            convertionContainer.appendChild(createTooltipContainer(convertedWord))
             innerContainer.appendChild(convertionContainer)  
         }
     })
     mainContainer.appendChild(innerContainer)
+}
+
+const createTooltipContainer = input =>{
+    const tooltipContainer = document.createElement('div')
+    tooltipContainer.classList.add('tooltip')
+    const tooltipText = createTooltipText(input.id)
+    tooltipContainer.appendChild(tooltipText)
+    tooltipContainer.appendChild(input)
+    return tooltipContainer
+}
+
+const createTooltipText = id =>{
+    const tooltipText = document.createElement('span')
+    tooltipText.classList.add('tooltiptext')
+    tooltipText.id = `tooltip${id}`
+    tooltipText.innerText = 'Copy to clipboard'
+    return tooltipText
 }
 
 const selectElementWithOneClick = (element, value) =>{
@@ -106,12 +123,20 @@ const selectElementWithOneClick = (element, value) =>{
     element.id = counter
     counter = counter + 1
     element.onclick = () => selectText(element.id)
+    element.onmouseout = () => cleanTooltip(element.id)
 }
 
-const selectText = (id) =>{
+const selectText = id =>{
     const input = document.getElementById(id)
     input.select()
     document.execCommand("copy")
+    const tooltip = document.getElementById(`tooltip${id}`)
+    tooltip.innerHTML = "Copied!"
+}
+
+const cleanTooltip = id =>{
+    const tooltip = document.getElementById(`tooltip${id}`);
+    tooltip.innerHTML = "Copy to clipboard";
 }
 
 const printHistory = () =>{
@@ -137,4 +162,3 @@ const innerHTMLCleaner = elementId =>{
     const element = document.getElementById(elementId)
     element.innerHTML = ''
 }
-
