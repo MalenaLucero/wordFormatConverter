@@ -111,6 +111,7 @@ const selectElementWithOneClick = (element, value) =>{
 const selectText = (id) =>{
     const input = document.getElementById(id)
     input.select()
+    document.execCommand("copy")
 }
 
 const printHistory = () =>{
