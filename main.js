@@ -14,6 +14,7 @@ const initializeEventListener = () =>{
 const convert = () =>{
     word = document.getElementById('word').value
     if(word !== ''){
+        if(convertionsHistory.length === 0) hideElement('startingMessage')
         clearOldData()
         word = deleteMultipleSpaces(word.trim())
         currentConvertions.push({"originalWord": word})
@@ -161,4 +162,14 @@ const inputCleaner = () =>{
 const innerHTMLCleaner = elementId =>{
     const element = document.getElementById(elementId)
     element.innerHTML = ''
+}
+
+const showElement = elementId =>{
+    const element = document.getElementById(elementId)
+    element.classList.replace('hide', 'show')
+}
+
+const hideElement = elementId =>{
+    const element = document.getElementById(elementId)
+    element.classList.replace('show', 'hide')
 }
